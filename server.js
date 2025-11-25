@@ -26,7 +26,7 @@ app.use('/',authRoutes);
 
 app.get('/',(req,res)=>{
     if(!req.session.user)return res.redirect('/login');
-    res.render('home.njk',{user:req.session.user});
+    res.render('home.njk',{hola});
 });
 
 const port = process.env.PORT || 3000;
