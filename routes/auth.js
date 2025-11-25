@@ -13,15 +13,17 @@ router.post('/register',async(req,res)=>{
     await pool.query(
         'INSERT INTO usuarios(nombre,email,password) VALUES($1,$2,$3)',[nombre,email,hash]
     );
-    res.redirect('/login',(req,res)=>{
-        res.render('login.njk')
-    });
+    res.redirect('/login')
+    })
 
-    router.post('/login',async(req,res)=>{
-        const {email,password}=req.body;
+    router.get('/login',(req,res)=>{
+        res.render('login.njk')
+    })
+    router.post('/login', async (req,res)=>{
+        const { email,password }=req.body;
         const result = await pool.query(
-            'SELECT * FROM usuarios WHERE email = $1 LIMIT 1;',[email]
-        );
+            'SELECT * FROM usuarios WHERE email = $1 LIMIT 1;',
+            [email]);
         if (result.rowCount ===0)return res.send
         ("Usuario no encontrado.");
         const usuario = result.rows[0];
@@ -34,7 +36,6 @@ router.post('/register',async(req,res)=>{
 
     router.get('/logout',(req,res)=>{
     req.session.destroy('/login');
-    });
 });
 
 module.exports = router;
