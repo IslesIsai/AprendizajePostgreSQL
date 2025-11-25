@@ -36,10 +36,6 @@ router.post('/register',async(req,res)=>{
 
     router.get('/logout',(req,res)=>{
     req.session.destroy('/login');
-
-    router.get('/login',(req,res)=>{
-        res.render('/login.njk')
-    })
 });
 
 module.exports = router;
