@@ -1,0 +1,10 @@
+{% extends 'layout.njk' %}
+{% block content %}
+    <h2>Iniciar Sesion</h2>
+    <form method='post'>
+        <input type="text" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Contraseña" required>
+        <button type="submit">Entrar</button>
+    </form>
+    <a href="/registrar">Crear cuenta</a>
+{% endblock%}

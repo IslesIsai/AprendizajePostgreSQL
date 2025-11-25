@@ -1,0 +1,14 @@
+{% extends 'layout.njk' %}
+{% block content %}
+<h2>Registro</h2>
+<form method='post'>
+    <input name='nombre' type="text"
+    placeholder="Nombre" required>
+    <input name='email' type="email"
+    placeholder='Email' required>
+    <input name='password' type="password"
+    placeholder='Contraseña' required>
+    <button type="submit">Registrarme</button>
+</form>
+<a href="/login">Iniciar Sesion</a>
+{% endblock %}
