@@ -18,8 +18,8 @@
             <td>{{c.apellido}}</td>
             <td>{{c.telefono}}</td>
             <td>{{c.email}}</td>
-            <td><a href="/clientes/editar">Editar</a>
-            <a href="/clientes/eliminar" onclick="return confirm('Eliminar?')">Eliminar</a></td>
+            <td><a href="/clientes/editar/{{c.id}}">Editar</a>
+            <a href="/clientes/eliminar/{{c.id}}" onclick="return confirm('Eliminar?')">Eliminar</a></td>
         </tr>
         {% endfor %}
     </table>

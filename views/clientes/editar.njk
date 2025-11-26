@@ -1,0 +1,12 @@
+{% extends 'layout.njk' %}
+{% block content%}
+    <h2>Editar Cliente {{c.nombre}}</h2>
+<form method="post">
+    <input type="text" name="nombre" placeholder="{{c.nombre}}">
+    <input type="text" name="apellido" placeholder="{{c.apellido}}">
+    <input type="text" name="telefono" placeholder="{{c.telefono}}">
+    <input type="email" name="email" placeholder="{{c.email}}">
+    <button type="submit" onclick='return confirm("confirmar Cambios")'> Guardar Cambios</button>
+</form>
+<a href="/clientes">Volver</a>
+{% endblock %}
