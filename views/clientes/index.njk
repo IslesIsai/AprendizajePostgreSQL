@@ -1,0 +1,27 @@
+{% extends 'layout.njk' %}
+{% block content %}
+    <h2>Clientes</h2>
+    <a href="/clientes/agregar">Nuevo Cliente</a>
+    <table border='1' cellpadding="8" >
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Telefono</th>
+            <th>Correo</th>
+            <th>Acciones</th>
+        </tr>
+        {% for c in clientes %}
+        <tr>
+            <td>{{c.id}}</td>
+            <td>{{c.nombre}}</td>
+            <td>{{c.apellido}}</td>
+            <td>{{c.telefono}}</td>
+            <td>{{c.email}}</td>
+            <td><a href="/clientes/editar">Editar</a>
+            <a href="/clientes/eliminar" onclick="return confirm('Eliminar?')">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Volver al home</a>
+{% endblock %}

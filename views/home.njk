@@ -1,5 +1,7 @@
 {% extends 'layout.njk' %}
 {% block content %}
-<h2> Bienvenid@, {{user.nombre}}</h2>
+<h2> Bienvenid@ {{user.nombre}}</h2>
+<a href="/clientes">Clientes</a>
 <a href="/logout">Cerrar sesion</a>
+
 {% endblock %}

@@ -5,7 +5,7 @@ require('dotenv').config()
 
 const app = express();
 const authRoutes = require('./routes/auth');
-
+const clientesRoutes = require('./routes/clientes');
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.static('public'))
@@ -23,6 +23,7 @@ nunjucks.configure('views',{
 })
 
 app.use('/',authRoutes);
+app.use('/clientes',clientesRoutes);
 
 app.get('/',(req,res)=>{
     if(!req.session.user)return res.redirect('/login');
